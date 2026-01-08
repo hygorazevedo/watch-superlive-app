@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/spl/:path*",
+      "destination": "https://api.spl-web.link/:path*"
+    }
+  ]
+}
