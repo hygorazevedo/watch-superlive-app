@@ -1,0 +1,11 @@
+.agora-player-container {
+  display: flex;
+  justify-content: center;
+}
+
+.video-container {
+  width: auto;
+  height: 95vh;
+  aspect-ratio: 9 / 16;
+  background: #000;
+}
