@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<StreamList />} />
-        <Route path="/:id" element={<AgoraPlayer />} />
+        <Route path=":id" element={<AgoraPlayer />} />
       </Routes>
     </>
   );
