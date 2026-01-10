@@ -26,10 +26,8 @@ const AgoraPlayer: React.FC = () => {
     const init = async () => {
       const client = AgoraRTC.createClient({ mode: "live", codec: "vp8" });
 
-      // se já existe um canal ativo
       if ((window as any).activeChannel) {
         if ((window as any).activeChannel === stream.channel) {
-          // mesmo canal → derruba anterior
           (window as any).activeClient?.leave();
         }
       }
@@ -56,7 +54,6 @@ const AgoraPlayer: React.FC = () => {
       });
     };
 
-
     init();
 
     return () => {
@@ -64,7 +61,6 @@ const AgoraPlayer: React.FC = () => {
       clientRef.current = null;
     };
   }, [stream]);
-
 
   useEffect(() => {
     remoteUsers.forEach((user) => {
@@ -75,9 +71,15 @@ const AgoraPlayer: React.FC = () => {
     });
   }, [remoteUsers]);
 
-
   return (
     <div className='agora-player-container'>
+      <button 
+        className="back-button" 
+        onClick={() => navigation("/")}
+      >
+        Voltar
+      </button>
+
       {remoteUsers.map((user) => (
         <div
           key={user.uid}

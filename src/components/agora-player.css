@@ -1,6 +1,7 @@
 .agora-player-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .video-container {
@@ -8,4 +9,12 @@
   height: 95vh;
   aspect-ratio: 9 / 16;
   background: #000;
+}
+
+.back-button {
+  height: 5vh;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
