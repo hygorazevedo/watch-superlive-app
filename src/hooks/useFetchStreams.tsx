@@ -231,7 +231,12 @@ export default function useFetchStreams(category: string, refresh: number): useF
         }));
         const merged = [...prev, ...newItems];
         const unique = Array.from(new Map(merged.map(s => [s.streamId, s])).values());
-        unique.sort((a, b) => b.isPremium - a.isPremium);
+        unique.sort((a, b) => {
+          if (b.isPremium !== a.isPremium) {
+            return b.isPremium - a.isPremium;
+          } 
+          return b.viewers - a.viewers; 
+        });
         return unique;
       });
 
